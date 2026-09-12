@@ -80,10 +80,7 @@ import notFound from "./middlewares/notfound.js";
 app.use(notFound);
 app.use(errorHandler);
 mongoose
-  .connect(process.env.MONGO_URI_prod, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGO_URI_prod)
   .then(() => {
     console.log("MongoDB connected");
 
